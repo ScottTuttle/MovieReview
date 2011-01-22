@@ -1,0 +1,31 @@
+<h2>Listing movies</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Director</th>
+    <th>Starring</th>
+    <th>Genre</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @movies.each do |movie| %>
+  <tr>
+    <td><%= link_to movie.title, movie %></td>
+    <td><%= movie.director %></td>
+    <td><%= movie.starring %></td>
+    <td><%= movie.genre %></td>
+    <% if can? :edit, Movie %>
+      <td><%= link_to "Edit", edit_movie_path(movie)%></td>
+    <% end %>
+    <% if can? :destroy, Movie %>
+      <td><%= link_to 'Destroy', movie, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+
+<br />
+<% if can? :create, Movie %>
+  <%= link_to 'New Movie', new_movie_path %>
+<% end %>

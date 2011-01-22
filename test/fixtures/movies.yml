@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  directors: MyString
+  starring: MyString
+  genre: 1
+
+two:
+  title: MyString
+  directors: MyString
+  starring: MyString
+  genre: 1
